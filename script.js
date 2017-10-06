@@ -53,13 +53,17 @@ var Counter = React.createClass({
     },
 
     render: function() {
-        return React.createElement('div', {className: "siamese-twins"},
-            React.createElement('button', {onClick: this.increment}, 'Increment' + this.state.counter),
-            React.createElement("button", {onClick: this.decrement}, "Decrement" + this.state.counter)
+        return React.createElement('div', {},
+            React.createElement("li", {onClick: this.increment},
+            React.createElement('button', {}, 'Increment' + this.state.counter))),
+            React.createElement("div", {}, 
+            React.createElement("li", {onClick: this.decrement},
+            React.createElement("button", {}, "Decrement" + this.state.counter))
         )
     },
 });
 
 var element = React.createElement("div", {},
+React.createElement(Counter),
 React.createElement(Counter));
 ReactDOM.render(element, document.getElementById('app'));
