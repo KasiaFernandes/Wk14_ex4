@@ -54,11 +54,9 @@ var Counter = React.createClass({
 
     render: function() {
         return React.createElement('div', {},
-            React.createElement("li", {onClick: this.increment},
-            React.createElement('button', {}, 'Increment' + this.state.counter))),
-            React.createElement("div", {}, 
-            React.createElement("li", {onClick: this.decrement},
-            React.createElement("button", {}, "Decrement" + this.state.counter))
+            React.createElement("h1", {}, this.state.counter),
+            React.createElement('button', {onClick: this.increment}, 'Increment'),
+            React.createElement("button", {onClick: this.decrement}, "Decrement")
         )
     },
 });
